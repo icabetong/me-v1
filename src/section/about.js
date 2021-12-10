@@ -6,7 +6,7 @@ const AboutSection = () => {
     <Box
       as="section"
       id="about"
-      minHeight="20vh">
+      minHeight="80vh">
 
     </Box>
   );

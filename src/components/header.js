@@ -25,9 +25,9 @@ const MenuItems = (props) => {
         color: 'blue.500',
       }}
       {...rest}>
-      <HashLink 
-        to={`/#${to}`}
-        scroll={(e) => e.scrollIntoView({ behavior: 'auto', block: 'end' })}>
+      <HashLink
+        smooth
+        to={`/#${to}`}>
         {children}
       </HashLink>
     </Text>
@@ -54,7 +54,7 @@ const Header = (props) => {
       {...props} >
       <Flex align="center" color={iconColor}>
         <Text ml={4} as="h4" fontWeight="bold" fontSize="lg">
-          <HashLink to="#">{t("me")}</HashLink>
+          <HashLink smooth to="#">{t("me")}</HashLink>
         </Text>
       </Flex>
 
