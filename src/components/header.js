@@ -42,7 +42,7 @@ const Header = (props) => {
 
   return (
     <Flex
-      as="nav"
+      as="header"
       align="center"
       justify="space-between"
       wrap="wrap"
