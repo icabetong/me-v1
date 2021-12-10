@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";
 import {
   Box,
@@ -14,13 +14,22 @@ const MenuItems = (props) => {
 
   return (
     <Text
+      as="button"
       mb={{ base: isLast ? 0 : 8, sm: 0 }}
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display="block"
       fontWeight={500}
-      {...rest}
-    >
-      <Link to={to}>{children}</Link>
+      color="whiteAlpha.800"
+      _hover={{
+        borderBottom: '2px',
+        color: 'blue.500',
+      }}
+      {...rest}>
+      <HashLink 
+        to={`/#${to}`}
+        scroll={(e) => e.scrollIntoView({ behavior: 'auto', block: 'end' })}>
+        {children}
+      </HashLink>
     </Text>
   )
 }
@@ -45,7 +54,7 @@ const Header = (props) => {
       {...props} >
       <Flex align="center" color={iconColor}>
         <Text ml={4} as="h4" fontWeight="bold" fontSize="lg">
-          <Link to="/">{t("me")}</Link>
+          <HashLink to="#">{t("me")}</HashLink>
         </Text>
       </Flex>
 
@@ -72,9 +81,9 @@ const Navigation = () => {
         justify={["center", "space-between", "flex-end", "flex-end"]}
         direction={["column", "row", "row", "row"]}
         pt={[4, 4, 0, 0]}>
-        <MenuItems to="/">{t("navigation.about")}</MenuItems>
-        <MenuItems to="/works">{t("navigation.works")}</MenuItems>
-        <MenuItems to="/contact">{t("navigation.contact")}</MenuItems>
+        <MenuItems to="about">{t("navigation.about")}</MenuItems>
+        <MenuItems to="works">{t("navigation.works")}</MenuItems>
+        <MenuItems to="contact">{t("navigation.contact")}</MenuItems>
       </Flex>
     </>
   )

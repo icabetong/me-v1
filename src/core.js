@@ -1,18 +1,34 @@
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import AboutPage from "./about/about";
-import ContactPage from "./contact/contact";
-import HomePage from "./home/home";
-import history from "./shared/history";
-import WorkPage from "./works/works";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Flex } from "@chakra-ui/react";
+import HomeSection from "./section/home";
+import Header from "./components/header";
+import AboutSection from "./section/about";
+import WorksSection from "./section/works";
+import ContactSection from "./section/contact";
+
+const RootPage = () => {
+  return (
+    <Flex
+      direction="column"
+      align="center"
+      maxW={{xl: "1200px"}}
+      minH="100vh"
+      m="0 auto">
+      <Header />
+      <HomeSection/>
+      <AboutSection/>
+      <WorksSection/>
+      <ContactSection/>
+    </Flex>
+  );
+}
 
 function Core() {
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage/>} exact/>
-        <Route path="/about" element={<AboutPage/>}/>
-        <Route path="/works" element={<WorkPage/>}/>
-        <Route path="/contact" element={<ContactPage/>}/>
+        <Route path="/" element={<RootPage/>} exact/>
       </Routes>
     </BrowserRouter>
   );
