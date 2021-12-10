@@ -27,7 +27,7 @@ const MenuItems = (props) => {
       {...rest}>
       <HashLink
         smooth
-        to={`/#${to}`}>
+        to={`#${to}`}>
         {children}
       </HashLink>
     </Text>
