@@ -25,11 +25,7 @@ const MenuItems = (props) => {
         color: 'blue.500',
       }}
       {...rest}>
-      <HashLink
-        smooth
-        to={`#${to}`}>
-        {children}
-      </HashLink>
+      <HashLink smooth to={`#${to}`}>{children}</HashLink>
     </Text>
   )
 }
