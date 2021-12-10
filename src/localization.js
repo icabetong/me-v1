@@ -20,6 +20,7 @@ i18n.use(initReactI18next).init({
           "linkedin": "LinkedIn",
           "github": "GitHub",
           "twitter": "Twitter",
+          "footer_copyright": "© 2021 Isaiah Collins Abetong. All rights reserved."
         },
         
       }

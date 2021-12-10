@@ -1,11 +1,12 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
-import HomeSection from "./section/home";
 import Header from "./components/header";
-import AboutSection from "./section/about";
-import WorksSection from "./section/works";
-import ContactSection from "./section/contact";
+import Footer from "./components/footer";
+import HomeSection from "./sections/home";
+import AboutSection from "./sections/about";
+import WorksSection from "./sections/works";
+import ContactSection from "./sections/contact";
 import history from "./shared/history";
 
 const RootPage = () => {
@@ -21,6 +22,7 @@ const RootPage = () => {
       <AboutSection/>
       <WorksSection/>
       <ContactSection/>
+      <Footer/>
     </Flex>
   );
 }
@@ -28,9 +30,7 @@ const RootPage = () => {
 function Core() {
   return (
     <HashRouter history={history}>
-      <Routes>
-        <Route path="/" element={<RootPage/>} exact/>
-      </Routes>
+      <Route path="/" component={RootPage} exact/>
     </HashRouter>
   );
 }

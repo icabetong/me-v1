@@ -16,7 +16,8 @@ const HomeSection = () => {
       wrap="no-wrap"
       minH="70vh"
       px={{base: 8, md: 16}}
-      my={16}>
+      mt={16}
+      mb={32}>
         <Stack>
           <Box fontSize={{base: '3xl', md: '7xl'}}>
             {t("about.header_greet")}
