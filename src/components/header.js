@@ -44,7 +44,9 @@ const Header = (props) => {
       color={["white", "white", "blue.500", "blue.500"]}
       {...props} >
       <Flex align="center" color={iconColor}>
-        <Text ml={4} as="h4" fontWeight="bold" fontSize="lg">{t("me")}</Text>
+        <Text ml={4} as="h4" fontWeight="bold" fontSize="lg">
+          <Link to="/">{t("me")}</Link>
+        </Text>
       </Flex>
 
       <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
