@@ -8,9 +8,9 @@ function Core() {
   return (
     <BrowserRouter history={history}>
       <Routes>
-        <Route path="/" component={AboutPage} exact/>
-        <Route path="/works" component={WorkPage}/>
-        <Route path="/contact" component={ContactPage}/>
+        <Route path="/" element={<AboutPage/>} exact/>
+        <Route path="/works" element={<WorkPage/>}/>
+        <Route path="/contact" element={<ContactPage/>}/>
       </Routes>
     </BrowserRouter>
   );
