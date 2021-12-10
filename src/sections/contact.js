@@ -9,7 +9,7 @@ const ContactSection = () => {
       as="section"
       id="contact"
       minHeight="80vh">
-      <Heading>{t("navigation.contact")}</Heading>
+      <Heading mt={8}>{t("navigation.contact")}</Heading>
     </Flex>
   );
 }

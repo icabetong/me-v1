@@ -20,27 +20,36 @@ const HomeSection = () => {
       mb={32}>
         <Stack>
           <Box fontSize={{base: '3xl', md: '7xl'}}>
-            {t("about.header_greet")}
+            {t("home.header_greet")}
             <Box color="blue.500" fontWeight={700}>{t("me")}</Box>
           </Box>
           <Box fontSize={{base: '2xl', md: '3xl'}}>
-            {t("about.header_field")}
+            {t("home.header_field")}
             <Box as="span" color="cyan.500" fontWeight={700}>
-              {t("about.header_position")}
+              {t("home.header_position")}
             </Box>
           </Box>
           <Box color="gray.500" maxWidth={{base: '100%', md: '50%'}}>
-            {t("about.header_basic")}
+            {t("home.header_basic")}
           </Box>
-          <Box>{t("about.lets_connect")}</Box>
+          <Box>{t("home.lets_connect")}</Box>
           <Stack direction="row">
-            <IconButton as="a" href="https://www.linkedin.com/in/isaiah-collins-284a27185/" target="_blank">
+            <IconButton 
+              as="a"
+              target="_blank"
+              href="https://www.linkedin.com/in/isaiah-collins-284a27185/">
               <FaLinkedinIn/>
             </IconButton>
-            <IconButton as="a" href="https://www.github.com/icabetong" target="_blank">
+            <IconButton
+              as="a"
+              target="_blank"
+              href="https://www.github.com/icabetong">
               <FaGithub/>
             </IconButton>
-            <IconButton as="a" href="https://www.twitter.com/icabetong" target="_blank">
+            <IconButton 
+              as="a"
+              target="_blank" 
+              href="https://www.twitter.com/icabetong">
               <FaTwitter/>
             </IconButton>
           </Stack>

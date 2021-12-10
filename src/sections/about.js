@@ -1,22 +1,108 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import {
+  SiAndroid,
+  SiKotlin,
+  SiJava,
+  SiJavascript,
+  SiTypescript,
+  SiFlutter,
+  SiMysql,
+  SiMongodb,
+  SiNodedotjs,
+  SiReact,
+  SiExpress,
+} from "react-icons/si";
 
 const AboutSection = () => {
   const { t } = useTranslation();
+  const skills = [
+    { icon: SiAndroid, name: 'skill.android' },
+    { icon: SiKotlin, name: 'skill.kotlin' },
+    { icon: SiJava, name: 'skill.java' },
+    { icon: SiFlutter, name: 'skill.flutter' },
+    { icon: SiJavascript, name: 'skill.javascript' },
+    { icon: SiTypescript, name: 'skill.typescript' },
+    { icon: SiMysql, name: 'skill.sql' },
+    { icon: SiMongodb, name: 'skill.mongodb' },
+    { icon: SiNodedotjs, name: 'skill.nodejs' },
+    { icon: SiReact, name: 'skill.reactjs' },
+    { icon: SiExpress, name: 'skill.expressjs' }
+  ];
 
   return (
     <Flex
       as="section"
       id="about"
+      w='100%'
       minHeight="80vh"
       direction="column"
-      align="center"
-      >
-      <Heading>{t("navigation.about")}</Heading>
-      
+      align="center">
+      <Heading mt={8}>{t("navigation.about")}</Heading>
+      <Flex
+        w='100%'
+        mt={4}
+        align="start"
+        justify={{base: "center", md: "space-around", xl: "space-between"}}
+        direction={{base: "column-reverse", md: "row"}}
+        wrap="nowrap">
+        <Stack
+          width={{base: '80%', md: '50%'}}
+          spacing={4}>
+          <Box
+            fontSize={22}
+            fontWeight="semibold"
+            textAlign='center'>
+            {t("about.skills")}
+          </Box>
+          <SimpleGrid 
+            p={4}
+            columns={{base: 1, sm: 2, lg: 3, xl: 4}}
+            spacing={4}>
+            { skills.map((skill) => {
+                return (
+                  <Box
+                    as="flex"
+                    align="center"
+                    justifyContent="center"
+                    borderWidth='1px'
+                    borderRadius={4}
+                    p={4}
+                    _hover={{
+                      borderColor: 'blue.300',
+                      color: 'blue.300'
+                    }}>
+                    <Box display="inline-block">
+                      {React.createElement(skill.icon, { size: 32 })}
+                    </Box>
+                    <Box mt={2}>{t(skill.name)}</Box>
+                  </Box>
+                )
+              })
+            }
+          </SimpleGrid>
+        </Stack>
+        <Stack 
+          w={{base: '80%', md: '50%'}}
+          spacing={4}>
+          <Box
+            fontSize={22}
+            fontWeight="semibold"
+            textAlign='center'>
+            {t("about.introduction")}
+          </Box>
+          <Box
+            px={16}
+            color="whiteAlpha.700"
+            textAlign="justify">
+            {t("about.info")}
+          </Box>
+        </Stack>
+      </Flex>
     </Flex>
   );
 }
 
 export default AboutSection;
+

@@ -10,7 +10,7 @@ const WorksSection = () => {
       as="section"
       id="works"
       minHeight="80vh">
-      <Heading>{t("navigation.works")}</Heading>
+      <Heading mt={8}>{t("navigation.works")}</Heading>
     </Flex>
   );
 }
