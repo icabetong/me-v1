@@ -7,7 +7,7 @@ const WorksSection = () => {
       as="section"
       id="works"
       minHeight="80vh">
-
+      Works
     </Box>
   );
 }

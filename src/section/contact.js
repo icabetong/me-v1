@@ -7,7 +7,7 @@ const ContactSection = () => {
       as="section"
       id="contact"
       minHeight="80vh">
-
+      Contact
     </Box>
   );
 }
