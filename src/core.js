@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import HomeSection from "./section/home";
 import Header from "./components/header";
@@ -26,11 +26,11 @@ const RootPage = () => {
 
 function Core() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<RootPage/>} exact/>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
