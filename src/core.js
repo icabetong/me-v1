@@ -6,6 +6,7 @@ import Header from "./components/header";
 import AboutSection from "./section/about";
 import WorksSection from "./section/works";
 import ContactSection from "./section/contact";
+import history from "./shared/history";
 
 const RootPage = () => {
   return (
@@ -26,7 +27,7 @@ const RootPage = () => {
 
 function Core() {
   return (
-    <HashRouter>
+    <HashRouter history={history}>
       <Routes>
         <Route path="/" element={<RootPage/>} exact/>
       </Routes>
