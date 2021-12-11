@@ -69,6 +69,7 @@ const WorksSection = () => {
         {works.map((work) => {
           return (
             <Flex
+              key={work.name}
               width={256}
               height={512}
               direction="column"
@@ -80,7 +81,7 @@ const WorksSection = () => {
               border="1px"
               borderColor="gray.700"
               borderRadius="md"
-              bg={`linear-gradient(0deg, rgba(0 0 0 / 65%), rgba(0 0 0 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})`}
+              bg={`linear-gradient(0deg, rgba(26 32 44 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})`}
               bgPosition="center"
               bgSize="cover"
               _hover={{
@@ -102,7 +103,7 @@ const WorksSection = () => {
               </Box>
               <Stack direction="row" spacing={4}>
                { work.frameworks.map((framework) => {
-                 return React.createElement(framework, { size: 24 });
+                 return React.createElement(framework, { key: framework.name, size: 24 });
                })} 
               </Stack>
             </Flex>

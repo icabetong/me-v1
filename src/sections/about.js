@@ -64,7 +64,7 @@ const AboutSection = () => {
             { skills.map((skill) => {
                 return (
                   <Box
-                    as="flex"
+                    key={skill.name}
                     align="center"
                     justifyContent="center"
                     borderWidth='1px'

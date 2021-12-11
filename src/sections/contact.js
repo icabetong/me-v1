@@ -13,30 +13,38 @@ const ContactSection = () => {
       w="100%"
       p={16}>
       <Flex
-        w="90%"
+        w={{base: '100%', md: '90%'}}
+        direction={{base: "column", md: "row"}}
         align="center"
-        justify="space-between"
+        justify={{base: 'center', md: "space-between"}}
         borderRadius="md"
         bgColor="blue.800"
         shadow="2px 2px 16px #2D3748"
-        px={16}
+        px={{base: 8, md: 16}}
         py={8}>
         <Box
-          w="30%"
+          w={{base: '100%', md: '30%'}}
           fontSize="4xl"
-          fontWeight="semibold">
+          fontWeight="semibold"
+          textAlign="center">
           {t("contact.get_in_touch")}
         </Box>
-        <Box w="10%"/>
-        <Text w="40%">
+        <Box 
+          w={{base: '100%', md: '20%'}}
+          h={{base: 4, md: 0}}/>
+        <Text 
+          w={{base: '100%', md: "40%"}}
+          textAlign="center">
           {t("contact.get_in_touch_body")}
         </Text>
-        <Box w="20%"/>
+        <Box 
+          w={{base: '100%', md: '20%'}}
+          h={{base: 4, md: 0}}/>
         <Button 
           as="a"
           href="mailto:isaiahcollins_02@live.com"
           target="_blank"
-          w="20%" 
+          w={{base: "100%", md: "20%"}} 
           minHeight={16}
           variant="solid"
           colorScheme="blue">
