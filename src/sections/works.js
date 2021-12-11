@@ -2,10 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Box, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
 import { SiAndroid, SiReact, SiFlutter, SiDart, SiJavascript, SiKotlin } from "react-icons/si";
-import fokusPreview from '../assets/fokus.png';
-import coindPreview from '../assets/coind.png';
-import openauthPreview from '../assets/openauth.png';
-import movieousPreview from '../assets/movieous.png';
+import fokusPreview from '../assets/fokus.webp';
+import coindPreview from '../assets/coind.webp';
+import openauthPreview from '../assets/openauth.webp';
+import movieousPreview from '../assets/movieous.webp';
 
 const WorksSection = () => {
   const { t } = useTranslation();
@@ -77,6 +77,8 @@ const WorksSection = () => {
               justify="center"
               as="a"
               href={work.git}
+              rel="noopener"
+              role="link"
               target="_blank"
               border="1px"
               borderColor="gray.700"

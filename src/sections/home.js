@@ -28,7 +28,7 @@ const HomeSection = () => {
               {t("home.header_position")}
             </Box>
           </Box>
-          <Box color="gray.500" maxWidth={{base: '100%', md: '50%'}}>
+          <Box color="gray.400" maxWidth={{base: '100%', md: '50%'}}>
             {t("home.header_basic")}
           </Box>
           <Box>{t("home.lets_connect")}</Box>
@@ -36,18 +36,24 @@ const HomeSection = () => {
             <IconButton 
               as="a"
               target="_blank"
+              role="link"
+              rel="noopener"
               href="https://www.linkedin.com/in/isaiah-collins-284a27185/">
               <FaLinkedinIn/>
             </IconButton>
             <IconButton
               as="a"
               target="_blank"
+              role="link"
+              rel="noopener"
               href="https://www.github.com/icabetong">
               <FaGithub/>
             </IconButton>
             <IconButton 
               as="a"
               target="_blank" 
+              role="link"
+              rel="noopener"
               href="https://www.twitter.com/icabetong">
               <FaTwitter/>
             </IconButton>

@@ -33,6 +33,8 @@ const Footer = () => {
         {references.map((reference) => {
           return (
             <IconButton
+              rel="noopener"
+              role="link"
               key={reference.target}
               variant="link"
               as="a"
