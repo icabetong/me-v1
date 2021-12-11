@@ -71,7 +71,8 @@ const AboutSection = () => {
                     p={4}
                     _hover={{
                       borderColor: 'blue.300',
-                      color: 'blue.300'
+                      color: 'blue.300',
+                      transition: 'all 500ms ease'
                     }}>
                     <Box display="inline-block">
                       {React.createElement(skill.icon, { size: 32 })}

@@ -20,9 +20,12 @@ const MenuItems = (props) => {
       display="block"
       fontWeight={500}
       color="whiteAlpha.800"
+      borderBottom='2px'
+      borderColor="gray.800"
       _hover={{
         borderBottom: '2px',
         color: 'blue.500',
+        transition: 'all 500ms ease',
       }}
       {...rest}>
       <HashLink smooth to={`#${to}`}>{children}</HashLink>
