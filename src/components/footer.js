@@ -33,6 +33,7 @@ const Footer = () => {
         {references.map((reference) => {
           return (
             <IconButton
+              key={reference.target}
               variant="link"
               as="a"
               target="_blank"
@@ -42,7 +43,7 @@ const Footer = () => {
                 backgroundColor: "blue.800",
                 transition: 'all 500ms ease'
               }}>
-              {React.createElement(reference.icon, { key: reference.target, size: 24 })}
+              {React.createElement(reference.icon, { size: 24 })}
             </IconButton>
           )
         })}

@@ -7,7 +7,6 @@ import HomeSection from "./sections/home";
 import AboutSection from "./sections/about";
 import WorksSection from "./sections/works";
 import ContactSection from "./sections/contact";
-import history from "./shared/history";
 
 const RootPage = () => {
   return (
@@ -29,7 +28,7 @@ const RootPage = () => {
 
 function Core() {
   return (
-    <HashRouter history={history}>
+    <HashRouter>
       <Route path="/" component={RootPage} exact/>
     </HashRouter>
   );
