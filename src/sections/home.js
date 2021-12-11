@@ -12,18 +12,17 @@ const HomeSection = () => {
       id="home"
       align="center"
       justify={{ base: "center", md: "space-around", xl: "space-between" }}
-      direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
       minH="70vh"
       px={{base: 8, md: 16}}
       mt={16}
       mb={32}>
-        <Stack>
-          <Box fontSize={{base: '3xl', md: '7xl'}}>
+        <Stack spacing={2}>
+          <Box fontSize={{base: '4xl', md: '7xl'}}>
             {t("home.header_greet")}
             <Box color="blue.500" fontWeight={700}>{t("me")}</Box>
           </Box>
-          <Box fontSize={{base: '2xl', md: '3xl'}}>
+          <Box fontSize={{base: '3xl', md: '3xl'}}>
             {t("home.header_field")}
             <Box as="span" color="cyan.500" fontWeight={700}>
               {t("home.header_position")}

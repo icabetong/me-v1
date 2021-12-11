@@ -5,6 +5,7 @@ import {
   Box,
   Flex,
   Text,
+  SlideFade,
   useBreakpointValue
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -37,7 +38,16 @@ const Header = (props) => {
   const { t } = useTranslation();
   const [show, setShow] = React.useState(false);
   const toggleMenu = () => setShow(!show);
-  const iconColor = useBreakpointValue({ base: "white", md: "blue.500" })
+  const animation = useBreakpointValue({base: true, md: false});
+
+  const navigation = (
+    <Box
+      display={{ base: show ? "block" : "none", md: "block" }}
+      flexBasis={{ base: "100%", md: "auto" }}
+      mt={8}>
+      <Navigation />
+    </Box>
+  );
 
   return (
     <Flex
@@ -48,25 +58,28 @@ const Header = (props) => {
       w="100%"
       mb={8}
       p={8}
-      bg={["blue.500", "blue.500", "transparent", "transparent"]}
-      color={["white", "white", "blue.500", "blue.500"]}
+      bg="transparent"
+      color="white"
+      direction={{ base: 'column', md: 'row' }}
       {...props} >
-      <Flex align="center" color={iconColor}>
+      <Flex display={{ base: 'none', md: 'inline' }}>
         <Text ml={4} as="h4" fontWeight="bold" fontSize="lg">
           <HashLink smooth to="#">{t("me")}</HashLink>
         </Text>
       </Flex>
 
-      <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
+      <Box alignSelf="flex-end" display={{ base: "block", md: "none" }} onClick={toggleMenu}>
         {show ? <CloseIcon /> : <HamburgerIcon />}
       </Box>
 
-      <Box
-        display={{ base: show ? "block" : "none", md: "block" }}
-        flexBasis={{ base: "100%", md: "auto" }}>
-        <Navigation />
-      </Box>
+      {animation ?
+      <SlideFade in={show}>
+        {navigation}
+      </SlideFade>
+      : navigation
+      }
     </Flex>
+
   )
 }
 
