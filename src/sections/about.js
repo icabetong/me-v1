@@ -48,7 +48,8 @@ const AboutSection = () => {
         direction={{base: "column-reverse", md: "row"}}
         wrap="nowrap">
         <Stack
-          width={{base: '80%', md: '50%'}}
+          my={4}
+          width={{base: '100%', md: '50%'}}
           spacing={4}>
           <Box
             fontSize={22}
@@ -58,7 +59,7 @@ const AboutSection = () => {
           </Box>
           <SimpleGrid 
             p={4}
-            columns={{base: 1, sm: 2, lg: 3, xl: 4}}
+            columns={{base: 2, lg: 3, xl: 4}}
             spacing={4}>
             { skills.map((skill) => {
                 return (
@@ -67,7 +68,7 @@ const AboutSection = () => {
                     align="center"
                     justifyContent="center"
                     borderWidth='1px'
-                    borderRadius={4}
+                    borderRadius="md"
                     p={4}
                     _hover={{
                       borderColor: 'blue.300',
@@ -85,7 +86,8 @@ const AboutSection = () => {
           </SimpleGrid>
         </Stack>
         <Stack 
-          w={{base: '80%', md: '50%'}}
+          my={4}
+          w={{base: '100%', md: '50%'}}
           spacing={4}>
           <Box
             fontSize={22}

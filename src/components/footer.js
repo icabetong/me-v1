@@ -47,7 +47,7 @@ const Footer = () => {
           )
         })}
       </Stack>
-      <Box my={4}>
+      <Box my={4} textAlign="center">
         {t("footer.copyright")}
         <Box as="span" color="cyan.500">
           {'Isaiah Collins Abetong'}

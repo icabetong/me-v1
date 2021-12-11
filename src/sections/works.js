@@ -14,6 +14,7 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/fokus-android',
       preview: fokusPreview,
       name: 'Fokus',
+      desc: 'Reminder app for tasks and events tailored specifically for students',
       frameworks: [
         SiAndroid,
         SiKotlin
@@ -23,6 +24,7 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/coind',
       preview: coindPreview,
       name: 'Coind',
+      desc: 'A cryptocurrency information app built using flutter',
       frameworks: [
         SiFlutter,
         SiDart,
@@ -32,6 +34,7 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/openauth',
       preview: openauthPreview,
       name: 'OpenAuth',
+      desc: 'A beautiful, secure and simple authenticator app that supports multiple protocols and services.',
       frameworks: [
         SiFlutter,
         SiDart,
@@ -41,6 +44,7 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/movieous',
       preview: movieousPreview,
       name: 'Movieous',
+      desc: 'A sample theater reservation client built using React and Chakra-UI',
       frameworks: [
         SiJavascript,
         SiReact,
@@ -73,20 +77,28 @@ const WorksSection = () => {
               as="a"
               href={work.git}
               target="_blank"
-              boxShadow="lg"
+              border="1px"
+              borderColor="gray.700"
               borderRadius="md"
-              bg={`linear-gradient(0deg, rgba(0 0 0 / 65%), rgba(44 82 130 / 50%)), url(${work.preview})`}
+              bg={`linear-gradient(0deg, rgba(0 0 0 / 65%), rgba(0 0 0 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})`}
               bgPosition="center"
               bgSize="cover"
               _hover={{
-                
+                borderColor: "blue.300",
+                transition: "all 500ms ease"
               }}>
               <Box 
                 my={4}
-                color="white" 
+                color="blue.300" 
                 fontSize="2xl"
                 fontWeight="medium">
                 {work.name}
+              </Box>
+              <Box
+                mb={4}
+                mx={4}
+                textAlign="center">
+                {work.desc}
               </Box>
               <Stack direction="row" spacing={4}>
                { work.frameworks.map((framework) => {
