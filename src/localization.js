@@ -42,6 +42,11 @@ i18n.use(initReactI18next).init({
           "nodejs": "Node.JS",
           "reactjs": "React.JS",
           "expressjs": "Express.JS"
+        },
+        "contact": {
+          "get_in_touch": "Get in Touch",
+          "get_in_touch_body": "Interested in working together? We should queue up a chat.",
+          "say_hello": "Say Hello"
         }
       }
     }
