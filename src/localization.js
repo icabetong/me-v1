@@ -19,6 +19,7 @@ i18n.use(initReactI18next).init({
           "header_field": "I'm a mobile app ",
           "header_position": "developer",
           "header_basic": "Currently a student in Central Luzon State University, I specialize in creating mobile apps with both native and cross-platform solutions; with also some proficiency with web frameworks.",
+          "read_my_resume": "Read my Resume",
           "lets_connect": "Let's Connect:",
         },
         "about": {

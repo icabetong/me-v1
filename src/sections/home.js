@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Flex, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, IconButton, Stack } from "@chakra-ui/react";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const HomeSection = () => {
@@ -17,7 +17,7 @@ const HomeSection = () => {
       px={{base: 8, md: 16}}
       mt={16}
       mb={32}>
-        <Stack spacing={2}>
+        <Stack spacing={4}>
           <Box fontSize={{base: '4xl', md: '7xl'}}>
             {t("home.header_greet")}
             <Box color="blue.500" fontWeight={700}>{t("me")}</Box>
@@ -31,6 +31,14 @@ const HomeSection = () => {
           <Box color="gray.400" maxWidth={{base: '100%', md: '50%'}}>
             {t("home.header_basic")}
           </Box>
+          <Button
+            width="xs"
+            as="a"
+            href="https://github.com/icabetong/portfolio/blob/main/assets/resume.pdf"
+            rel="noopener"
+            colorScheme="blue">
+            {t("home.read_my_resume")}
+          </Button>
           <Box>{t("home.lets_connect")}</Box>
           <Stack direction="row">
             <IconButton 
