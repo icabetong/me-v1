@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, SimpleGrid, Stack } from "@chakra-ui/react";
 import {
   SiAndroid,
   SiKotlin,
@@ -14,6 +14,7 @@ import {
   SiReact,
   SiExpress,
 } from "react-icons/si";
+import me from "../assets/me.webp";
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -88,7 +89,15 @@ const AboutSection = () => {
         <Stack 
           my={4}
           w={{base: '100%', md: '50%'}}
-          spacing={4}>
+          spacing={4}
+          align="center"
+          justify="center">
+          <Image 
+            boxSize="128px" 
+            objectFit="conver" 
+            src={me}
+            loading="lazy"
+            borderRadius="full"/>
           <Box
             fontSize={22}
             fontWeight="semibold"
