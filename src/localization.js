@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
         "about": {
           "skills": "Skills",
           "introduction": "Introduction",
-          "info": "I currently am being proficient in native Android development, developed some apps as sideprojects. You can check them out on my GitHub profile.\n\nHowever, I am also acquainted in web development, being done my thesis project using web technologies such as React and NodeJS.\n\nCurrently I am exploring the world of cross platforms development using the relatively new Flutter framework; and I currently enjoys it.",
+          "info": "I currently am being proficient in native Android development, developed some apps as sideprojects. You can check them out on my GitHub profile.\n\nHowever, I am also acquainted in web development, being done my thesis project using web technologies such as React and NodeJS.\n\nCurrently I am exploring the world of cross platforms development using the relatively new Flutter framework; and I currently enjoy it.",
         },
         "footer": {
           "copyright": "© 2021 ",

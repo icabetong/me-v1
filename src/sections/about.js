@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Box, Flex, Heading, Image, SimpleGrid, Stack } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 import {
   SiAndroid,
   SiKotlin,
@@ -19,17 +20,17 @@ import me from "../assets/me.webp";
 const AboutSection = () => {
   const { t } = useTranslation();
   const skills = [
-    { icon: SiAndroid, name: 'skill.android' },
-    { icon: SiKotlin, name: 'skill.kotlin' },
-    { icon: SiJava, name: 'skill.java' },
-    { icon: SiFlutter, name: 'skill.flutter' },
-    { icon: SiJavascript, name: 'skill.javascript' },
-    { icon: SiTypescript, name: 'skill.typescript' },
-    { icon: SiMysql, name: 'skill.sql' },
-    { icon: SiMongodb, name: 'skill.mongodb' },
-    { icon: SiNodedotjs, name: 'skill.nodejs' },
-    { icon: SiReact, name: 'skill.reactjs' },
-    { icon: SiExpress, name: 'skill.expressjs' }
+    { icon: SiAndroid, name: 'skill.android', star: 3 },
+    { icon: SiKotlin, name: 'skill.kotlin', star: 4 },
+    { icon: SiJava, name: 'skill.java', star: 4 },
+    { icon: SiFlutter, name: 'skill.flutter', star: 3  },
+    { icon: SiJavascript, name: 'skill.javascript', star: 4 },
+    { icon: SiTypescript, name: 'skill.typescript', star: 4 },
+    { icon: SiMysql, name: 'skill.sql', star: 3 },
+    { icon: SiMongodb, name: 'skill.mongodb', star: 3 },
+    { icon: SiNodedotjs, name: 'skill.nodejs', star: 2 },
+    { icon: SiReact, name: 'skill.reactjs', star: 3 },
+    { icon: SiExpress, name: 'skill.expressjs', star: 4 }
   ];
 
   return (
@@ -80,6 +81,12 @@ const AboutSection = () => {
                       {React.createElement(skill.icon, { size: 32 })}
                     </Box>
                     <Box mt={2}>{t(skill.name)}</Box>
+                    <Box as="flex" align="center" mt={4}>
+                    { Array(5).fill('').map((_, i) => (
+                      <StarIcon mx="1px" key={i} color={i < skill.star ? "blue.300" : "gray.100" }/>
+                    ))
+                    }
+                    </Box>
                   </Box>
                 )
               })
