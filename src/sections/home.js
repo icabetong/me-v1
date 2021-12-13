@@ -34,7 +34,7 @@ const HomeSection = () => {
           <Button
             width="xs"
             as="a"
-            href="https://github.com/icabetong/portfolio/blob/main/assets/resume.pdf"
+            href="https://github.com/icabetong/portfolio/raw/main/assets/resume.pdf"
             rel="noopener"
             colorScheme="blue">
             {t("home.read_my_resume")}
