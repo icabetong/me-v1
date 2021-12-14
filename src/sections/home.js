@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Box, Button, Flex, IconButton, Stack } from "@chakra-ui/react";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
@@ -19,14 +19,20 @@ const HomeSection = () => {
       mb={32}>
         <Stack spacing={4}>
           <Box fontSize={{base: '4xl', md: '7xl'}}>
-            {t("home.header_greet")}
-            <Box color="blue.500" fontWeight={700}>{t("me")}</Box>
+            <Trans
+              i18nKey="home.header_greet"
+              values={{ me: t("me") }}
+              components={{
+                focus: <Box color="blue.500" fontWeight={700}/>
+              }}/>
           </Box>
-          <Box fontSize={{base: '3xl', md: '3xl'}}>
-            {t("home.header_field")}
-            <Box as="span" color="cyan.500" fontWeight={700}>
-              {t("home.header_position")}
-            </Box>
+          <Box fontSize={{base: '4xl', md: '3xl'}}>
+            <Trans
+              i18nKey="home.header_field"
+              values={{ position: t("position") }}
+              components={{
+                focus: <Box as="span" color="cyan.500" fontWeight={700}/>
+              }}/>
           </Box>
           <Box color="gray.400" maxWidth={{base: '100%', md: '50%'}}>
             {t("home.header_basic")}
