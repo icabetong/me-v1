@@ -48,6 +48,10 @@ i18n.use(initReactI18next).init({
           "get_in_touch": "Get in Touch",
           "get_in_touch_body": "Interested in working together? We should queue up a chat.",
           "say_hello": "Say Hello"
+        },
+        "locales": {
+          "en": "English",
+          "de": "German"
         }
       }
     },
@@ -96,6 +100,10 @@ i18n.use(initReactI18next).init({
           "get_in_touch": "Kontakt aufnehmen",
           "get_in_touch_body": "Sind Sie an einer Zusammenarbeit interessiert? Wir sollten uns zu einem Gespräch verabreden.",
           "say_hello": "Hallo sagen"
+        },
+        "locales": {
+          "en": "Englisch",
+          "de": "Deutsch"
         }
       }
     }

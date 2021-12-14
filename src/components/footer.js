@@ -1,6 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { Box, Flex, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, IconButton, Menu, MenuButton, MenuList, MenuItem, Stack } from "@chakra-ui/react";
+import { ChevronUpIcon } from "@chakra-ui/icons";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -8,6 +9,7 @@ import {
   FaTwitter,
   FaInstagram
 } from "react-icons/fa";
+import locales from "../shared/locales";
 
 const Footer = () => {
   const { t } = useTranslation();
