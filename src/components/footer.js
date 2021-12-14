@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Box, Flex, IconButton, Stack } from "@chakra-ui/react";
 import {
   FaGithub,
@@ -51,11 +51,12 @@ const Footer = () => {
         })}
       </Stack>
       <Box my={4} textAlign="center">
-        {t("footer.copyright")}
-        <Box as="span" color="cyan.500">
-          {'Isaiah Collins Abetong'}
-        </Box>
-        {t("footer.rights")}
+        <Trans
+          i18nKey="footer.copyright"
+          values={{ me: t("me") }}
+          components={{
+            focus: <Box as="span" color="cyan.500"/>
+          }}/>
       </Box>
     </Flex>
   );
