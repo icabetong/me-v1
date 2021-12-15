@@ -81,7 +81,7 @@ const AboutSection = () => {
                       {React.createElement(skill.icon, { size: 32 })}
                     </Box>
                     <Box mt={2}>{t(skill.name)}</Box>
-                    <Box as="flex" align="center" mt={4}>
+                    <Box align="center" mt={4}>
                     { Array(5).fill('').map((_, i) => (
                       <StarIcon mx="1px" key={i} color={i < skill.star ? "blue.300" : "gray.100" }/>
                     ))

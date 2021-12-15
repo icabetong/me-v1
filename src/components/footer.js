@@ -1,6 +1,17 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { Box, Button, Flex, IconButton, Menu, MenuButton, MenuList, MenuItem, Stack } from "@chakra-ui/react";
+import { 
+  Box, 
+  Button, 
+  Flex, 
+  IconButton, 
+  Menu, 
+  MenuButton, 
+  MenuList, 
+  MenuItem, 
+  Spacer, 
+  Stack 
+} from "@chakra-ui/react";
 import { ChevronUpIcon } from "@chakra-ui/icons";
 import {
   FaGithub,
@@ -8,7 +19,8 @@ import {
   FaEnvelope,
   FaTwitter,
   FaInstagram
-} from "react-icons/fa";
+} from "react-icons/fa";  
+import i18next from "i18next";
 import locales from "../shared/locales";
 
 const Footer = () => {
@@ -21,8 +33,14 @@ const Footer = () => {
     { icon: FaInstagram, target: 'https://www.instagram.com/izayakorinzu/' },
   ]
 
+  const onChangeLocale = (locale) => {
+    window.localStorage.setItem('i18nextLng', locale);
+    i18next.changeLanguage(locale);
+  }
+
   return (
     <Flex
+      w="100%"
       as="footer"
       direction="column"
       minHeight="10vh"
@@ -52,14 +70,38 @@ const Footer = () => {
           )
         })}
       </Stack>
-      <Box my={4} textAlign="center">
-        <Trans
-          i18nKey="footer.copyright"
-          values={{ me: t("me") }}
-          components={{
-            focus: <Box as="span" color="cyan.500"/>
-          }}/>
-      </Box>
+      <Flex
+        w="100%"
+        direction="row"
+        justify="space-between">
+        <Box my={4} textAlign="center" fontSize="sm">
+          <Trans
+            i18nKey="footer.copyright"
+            values={{ me: t("me_complete") }}
+            components={{
+              focus: <Box as="span" color="cyan.500"/>
+            }}/>
+        </Box>
+        <Spacer/>
+        <Menu>
+          <MenuButton
+            size="sm"
+            as={Button}
+            rightIcon={<ChevronUpIcon/>}>
+            {t(`locales.${i18next.language}`)}
+          </MenuButton>
+          <MenuList>
+          { locales.map((locale) => (
+            <MenuItem
+              key={locale}
+              onClick={() => onChangeLocale(locale)}>
+                {t(`locales.${locale}`)}
+            </MenuItem>
+          ))
+          }
+          </MenuList>
+        </Menu>
+      </Flex>
     </Flex>
   );
 }

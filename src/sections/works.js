@@ -11,40 +11,44 @@ const WorksSection = () => {
   const { t } = useTranslation();
   const works = [
     {
+      id: 'fokus',
       git: 'https://github.com/icabetong/fokus-android',
       preview: fokusPreview,
       name: 'Fokus',
-      desc: 'Reminder app for tasks and events tailored specifically for students',
+      desc: '',
       frameworks: [
         SiAndroid,
         SiKotlin
       ]
     },
     {
+      id: 'coind',
       git: 'https://github.com/icabetong/coind',
       preview: coindPreview,
       name: 'Coind',
-      desc: 'A cryptocurrency information app built using flutter',
+      desc: '',
       frameworks: [
         SiFlutter,
         SiDart,
       ]
     },
     {
+      id: 'openauth',
       git: 'https://github.com/icabetong/openauth',
       preview: openauthPreview,
       name: 'OpenAuth',
-      desc: 'A beautiful, secure and simple authenticator app that supports multiple protocols and services.',
+      desc: '',
       frameworks: [
         SiFlutter,
         SiDart,
       ]
     },
     {
+      id: 'movieous',
       git: 'https://github.com/icabetong/movieous',
       preview: movieousPreview,
       name: 'Movieous',
-      desc: 'A sample theater reservation client built using React and Chakra-UI',
+      desc: '',
       frameworks: [
         SiJavascript,
         SiReact,
@@ -69,7 +73,7 @@ const WorksSection = () => {
         {works.map((work) => {
           return (
             <Flex
-              key={work.name}
+              key={work.id}
               width={256}
               height={512}
               direction="column"
@@ -101,7 +105,7 @@ const WorksSection = () => {
                 mb={4}
                 mx={4}
                 textAlign="center">
-                {work.desc}
+                {t(`works.${work.id}`)}
               </Box>
               <Stack direction="row" spacing={4}>
                { work.frameworks.map((framework) => {
