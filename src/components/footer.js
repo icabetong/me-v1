@@ -22,6 +22,7 @@ import {
 } from "react-icons/fa";  
 import i18next from "i18next";
 import locales from "../shared/locales";
+import { getLocale } from "../shared/tools";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -72,8 +73,9 @@ const Footer = () => {
       </Stack>
       <Flex
         w="100%"
-        direction="row"
-        justify="space-between">
+        align="center"
+        direction={{base: "column", md: "row"}}
+        justify={{base: "center", md: "space-between"}}>
         <Box my={4} textAlign="center" fontSize="sm">
           <Trans
             i18nKey="footer.copyright"
@@ -88,7 +90,7 @@ const Footer = () => {
             size="sm"
             as={Button}
             rightIcon={<ChevronUpIcon/>}>
-            {t(`locales.${i18next.language}`)}
+            {t(getLocale(`locales.${i18next.language}`))}
           </MenuButton>
           <MenuList>
           { locales.map((locale) => (

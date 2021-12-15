@@ -26,7 +26,7 @@ const HomeSection = () => {
                 focus: <Box color="blue.500" fontWeight={700}/>
               }}/>
           </Box>
-          <Box fontSize={{base: '4xl', md: '3xl'}}>
+          <Box fontSize={{base: '2xl', md: '3xl'}}>
             <Trans
               i18nKey="home.header_field"
               values={{ position: t("position") }}
