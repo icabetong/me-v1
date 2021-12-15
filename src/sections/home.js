@@ -52,6 +52,7 @@ const HomeSection = () => {
               target="_blank"
               role="link"
               rel="noopener"
+              aria-label="LinkedIn"
               href="https://www.linkedin.com/in/isaiah-collins-284a27185/">
               <FaLinkedinIn/>
             </IconButton>
@@ -60,6 +61,7 @@ const HomeSection = () => {
               target="_blank"
               role="link"
               rel="noopener"
+              aria-label="GitHub"
               href="https://www.github.com/icabetong">
               <FaGithub/>
             </IconButton>
@@ -68,6 +70,7 @@ const HomeSection = () => {
               target="_blank" 
               role="link"
               rel="noopener"
+              aria-label="Twitter"
               href="https://www.twitter.com/icabetong">
               <FaTwitter/>
             </IconButton>

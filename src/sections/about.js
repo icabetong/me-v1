@@ -100,11 +100,14 @@ const AboutSection = () => {
           align="center"
           justify="center">
           <Image 
+            width="128px"
+            height="128px"
             boxSize="128px" 
             objectFit="conver" 
             src={me}
             loading="lazy"
-            borderRadius="full"/>
+            borderRadius="full"
+            alt={t("me_complete")}/>
           <Box
             fontSize={22}
             fontWeight="semibold"
