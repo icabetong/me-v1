@@ -1,6 +1,6 @@
 # Portfolio
 
-My website portfolio.
+My own portfolio website, built with React and Chakra-UI.
 
 ## Built with
 
