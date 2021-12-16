@@ -54,6 +54,7 @@ const english = {
       "coind": "A cryptocurrency information app built using Flutter",
       "openauth": "A beautiful, secure and simple authenticator app that supports multiple protocols and services",
       "movieous": "A sample theater reservation client built using React and Chakra-UI",
+      "more": "See more on GitHub",
     }
   }
 }

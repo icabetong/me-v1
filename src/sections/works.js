@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import { SiAndroid, SiReact, SiFlutter, SiDart, SiJavascript, SiKotlin } from "react-icons/si";
 import fokusPreview from '../assets/fokus.webp';
 import coindPreview from '../assets/coind.webp';
@@ -117,6 +118,15 @@ const WorksSection = () => {
         })
         }
       </SimpleGrid>
+      <Button
+        as="a"
+        href="https://github.com/icabetong?tab=repositories"
+        target="_blank"
+        rel="noopener"
+        variant="outline"
+        rightIcon={<ChevronRightIcon/>}>
+        {t("works.more")}
+      </Button>
     </Flex>
   );
 }

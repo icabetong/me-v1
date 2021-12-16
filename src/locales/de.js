@@ -54,6 +54,7 @@ const deutsch = {
       "coind": "Eine mit Flutter erstellte Informations-App für Kryptowährungen",
       "openauth": "Eine schöne, sichere und einfache Authentifizierungs-App, die mehrere Protokolle und Dienste unterstützt",
       "movieous": "Ein Beispiel für einen Theaterreservierungs-Client, der mit React und Chakra-UI erstellt wurde",
+      "more": "Siehe mehr auf GitHub"
     }
   }
 }

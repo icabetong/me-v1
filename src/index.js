@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/jetbrains-mono';
+import '@fontsource/fira-code';
 import './index.css';
 import './localization';
 import Core from './core';

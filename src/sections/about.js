@@ -116,7 +116,7 @@ const AboutSection = () => {
           </Box>
           <Box
             px={16}
-            color="whiteAlpha.700"
+            color="gray.400"
             textAlign="justify">
             {t("about.info")}
           </Box>
