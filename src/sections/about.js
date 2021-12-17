@@ -1,6 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Flex, Heading, Image, SimpleGrid, Stack } from "@chakra-ui/react";
+import { 
+  Box, 
+  Flex, 
+  Heading, 
+  Image, 
+  SimpleGrid, 
+  Stack, 
+  useColorMode
+} from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import {
   SiAndroid,
@@ -19,6 +27,8 @@ import me from "../assets/me.webp";
 
 const AboutSection = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
+  
   const skills = [
     { icon: SiAndroid, name: 'skill.android', star: 3 },
     { icon: SiKotlin, name: 'skill.kotlin', star: 4 },
@@ -116,7 +126,7 @@ const AboutSection = () => {
           </Box>
           <Box
             px={16}
-            color="gray.400"
+            color={colorMode === 'dark' ? "gray.400" : "gray.600"}
             textAlign="justify">
             {t("about.info")}
           </Box>

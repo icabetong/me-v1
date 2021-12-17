@@ -10,7 +10,8 @@ import {
   MenuList, 
   MenuItem, 
   Spacer, 
-  Stack 
+  Stack,
+  useColorMode
 } from "@chakra-ui/react";
 import { ChevronUpIcon } from "@chakra-ui/icons";
 import {
@@ -26,6 +27,7 @@ import { getLocale } from "../shared/tools";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
   const references = [
     { icon: FaGithub, target: 'https://www.github.com/icabetong' },
     { icon: FaLinkedinIn, target: 'https://www.linkedin.com/in/isaiah-collins-284a27185/' },
@@ -63,7 +65,8 @@ const Footer = () => {
               href={reference.target}
               py={2}
               _hover={{
-                backgroundColor: "blue.800",
+                backgroundColor: colorMode === 'dark' ? "blue.800" : "blue.200",
+                color: colorMode === 'dark' ? 'white' : "blue.500",
                 transition: 'all 500ms ease'
               }}>
               {React.createElement(reference.icon, { size: 24 })}

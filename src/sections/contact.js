@@ -1,9 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Button, Flex, Text, } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, useColorMode } from "@chakra-ui/react";
 
 const ContactSection = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
   return (
     <Flex
       as="section"
@@ -18,8 +19,8 @@ const ContactSection = () => {
         align="center"
         justify={{base: 'center', md: "space-between"}}
         borderRadius="md"
-        bgColor="blue.800"
-        shadow="2px 2px 16px #2D3748"
+        bgColor={colorMode === 'dark' ? "blue.800" : 'blue.100'}
+        shadow={colorMode === 'dark' ? "2px 2px 16px #2D3748" : undefined}
         px={{base: 8, md: 16}}
         py={8}>
         <Box

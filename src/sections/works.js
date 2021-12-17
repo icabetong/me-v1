@@ -1,6 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Button, Flex, Heading, SimpleGrid, Stack } from "@chakra-ui/react";
+import { 
+  Box, 
+  Button,
+  Flex, 
+  Heading,
+  SimpleGrid, 
+  Stack, 
+  useColorMode
+} from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { SiAndroid, SiReact, SiFlutter, SiDart, SiJavascript, SiKotlin } from "react-icons/si";
 import fokusPreview from '../assets/fokus.webp';
@@ -10,6 +18,7 @@ import movieousPreview from '../assets/movieous.webp';
 
 const WorksSection = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
   const works = [
     {
       id: 'fokus',
@@ -86,9 +95,10 @@ const WorksSection = () => {
               role="link"
               target="_blank"
               border="1px"
-              borderColor="gray.700"
+              borderColor={colorMode === 'dark' ? "gray.700" : 'white'}
               borderRadius="md"
-              bg={`linear-gradient(0deg, rgba(26 32 44 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})`}
+              color={colorMode === 'dark' ? 'white' : 'black'}
+              bg={colorMode === 'dark' ? `linear-gradient(0deg, rgba(26 32 44 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})` : `linear-gradient(0deg, rgba(203 213 224 / 95%), rgba(226 232 240 / 60%)), url(${work.preview})`}
               bgPosition="center"
               bgSize="cover"
               _hover={{
@@ -97,7 +107,7 @@ const WorksSection = () => {
               }}>
               <Box 
                 my={4}
-                color="blue.300" 
+                color={colorMode === 'dark' ? "blue.300" : 'blue.500'} 
                 fontSize="2xl"
                 fontWeight="medium">
                 {work.name}

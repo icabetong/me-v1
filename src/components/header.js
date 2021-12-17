@@ -3,15 +3,23 @@ import { HashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";
 import {
   Box,
+  Button,
   Flex,
   Text,
   SlideFade,
-  useBreakpointValue
+  useBreakpointValue,
+  useColorMode
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { 
+  HamburgerIcon, 
+  CloseIcon,
+  SunIcon,
+  MoonIcon
+} from "@chakra-ui/icons";
 
 const MenuItems = (props) => {
   const { children, isLast, to = "/", ...rest } = props;
+  const { colorMode } = useColorMode();
 
   return (
     <Text
@@ -20,11 +28,8 @@ const MenuItems = (props) => {
       mr={{ base: 0, sm: isLast ? 0 : 8 }}
       display="block"
       fontWeight={500}
-      color="whiteAlpha.800"
-      borderBottom='2px'
-      borderColor="gray.800"
+      color={colorMode === 'dark' ? "whiteAlpha.800" : "blackAlpha.800"}
       _hover={{
-        borderBottom: '2px',
         color: 'blue.500',
         transition: 'all 500ms ease',
       }}
@@ -39,6 +44,7 @@ const Header = (props) => {
   const [show, setShow] = React.useState(false);
   const toggleMenu = () => setShow(!show);
   const animation = useBreakpointValue({base: true, md: false});
+  const { colorMode } = useColorMode();
 
   const navigation = (
     <Box
@@ -59,7 +65,7 @@ const Header = (props) => {
       mb={8}
       p={8}
       bg="transparent"
-      color="white"
+      color={colorMode === 'dark' ? 'white' : 'black'}
       direction={{ base: 'column', md: 'row' }}
       {...props} >
       <Flex display={{ base: 'none', md: 'inline' }}>
@@ -85,6 +91,7 @@ const Header = (props) => {
 
 const Navigation = () => {
   const { t } = useTranslation();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
@@ -96,6 +103,13 @@ const Navigation = () => {
         <MenuItems to="about">{t("navigation.about")}</MenuItems>
         <MenuItems to="works">{t("navigation.works")}</MenuItems>
         <MenuItems to="contact">{t("navigation.contact")}</MenuItems>
+        <MenuItems>
+          <Button 
+            variant="link"
+            onClick={() => toggleColorMode()}>
+            {colorMode === "dark" ? <SunIcon/> : <MoonIcon/>}
+          </Button>
+        </MenuItems>
       </Flex>
     </>
   )
