@@ -1,10 +1,11 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { Box, Button, Flex, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Button, Flex, IconButton, Stack, useColorMode } from "@chakra-ui/react";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const HomeSection = () => {
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
 
   return (
     <Flex 
@@ -34,7 +35,7 @@ const HomeSection = () => {
                 focus: <Box as="span" color="cyan.500" fontWeight={700}/>
               }}/>
           </Box>
-          <Box color="gray.400" maxWidth={{base: '100%', md: '50%'}}>
+          <Box color={colorMode === 'dark' ? "gray.400" : "gray.600"} maxWidth={{base: '100%', md: '50%'}}>
             {t("home.header_basic")}
           </Box>
           <Button

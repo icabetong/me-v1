@@ -23,7 +23,7 @@ import {
   SiReact,
   SiExpress,
 } from "react-icons/si";
-import me from "../assets/me.webp";
+import { me } from "../assets/assets";
 
 const AboutSection = () => {
   const { t } = useTranslation();

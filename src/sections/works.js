@@ -11,10 +11,12 @@ import {
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { SiAndroid, SiReact, SiFlutter, SiDart, SiJavascript, SiKotlin } from "react-icons/si";
-import fokusPreview from '../assets/fokus.webp';
-import coindPreview from '../assets/coind.webp';
-import openauthPreview from '../assets/openauth.webp';
-import movieousPreview from '../assets/movieous.webp';
+import { 
+  fokus, 
+  coind, 
+  openauth, 
+  movieous
+} from "../assets/assets";
 
 const WorksSection = () => {
   const { t } = useTranslation();
@@ -23,7 +25,7 @@ const WorksSection = () => {
     {
       id: 'fokus',
       git: 'https://github.com/icabetong/fokus-android',
-      preview: fokusPreview,
+      preview: fokus,
       name: 'Fokus',
       desc: '',
       frameworks: [
@@ -34,7 +36,7 @@ const WorksSection = () => {
     {
       id: 'coind',
       git: 'https://github.com/icabetong/coind',
-      preview: coindPreview,
+      preview: coind,
       name: 'Coind',
       desc: '',
       frameworks: [
@@ -45,7 +47,7 @@ const WorksSection = () => {
     {
       id: 'openauth',
       git: 'https://github.com/icabetong/openauth',
-      preview: openauthPreview,
+      preview: openauth,
       name: 'OpenAuth',
       desc: '',
       frameworks: [
@@ -56,7 +58,7 @@ const WorksSection = () => {
     {
       id: 'movieous',
       git: 'https://github.com/icabetong/movieous',
-      preview: movieousPreview,
+      preview: movieous,
       name: 'Movieous',
       desc: '',
       frameworks: [
@@ -98,7 +100,7 @@ const WorksSection = () => {
               borderColor={colorMode === 'dark' ? "gray.700" : 'white'}
               borderRadius="md"
               color={colorMode === 'dark' ? 'white' : 'black'}
-              bg={colorMode === 'dark' ? `linear-gradient(0deg, rgba(26 32 44 / 95%), rgba(44 82 130 / 60%)), url(${work.preview})` : `linear-gradient(0deg, rgba(203 213 224 / 95%), rgba(226 232 240 / 60%)), url(${work.preview})`}
+              bg={colorMode === 'dark' ? `linear-gradient(0deg, rgba(74 85 104 / 95%), rgba(160 174 192 / 60%)), url(${work.preview})` : `linear-gradient(0deg, rgba(203 213 224 / 35%), rgba(226 232 240 / 85%)), url(${work.preview})`}
               bgPosition="center"
               bgSize="cover"
               _hover={{
@@ -107,7 +109,7 @@ const WorksSection = () => {
               }}>
               <Box 
                 my={4}
-                color={colorMode === 'dark' ? "blue.300" : 'blue.500'} 
+                color={colorMode === 'dark' ? "blue.300" : 'blue.800'} 
                 fontSize="2xl"
                 fontWeight="medium">
                 {work.name}
@@ -120,7 +122,7 @@ const WorksSection = () => {
               </Box>
               <Stack direction="row" spacing={4}>
                { work.frameworks.map((framework) => {
-                 return React.createElement(framework, { key: framework.name, size: 24 });
+                 return React.createElement(framework, { key: framework, size: 24 });
                })} 
               </Stack>
             </Flex>
