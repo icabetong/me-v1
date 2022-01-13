@@ -27,7 +27,6 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/fokus-android',
       preview: fokus,
       name: 'Fokus',
-      desc: '',
       frameworks: [
         SiAndroid,
         SiKotlin
@@ -38,7 +37,6 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/coind',
       preview: coind,
       name: 'Coind',
-      desc: '',
       frameworks: [
         SiFlutter,
         SiDart,
@@ -49,7 +47,6 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/openauth',
       preview: openauth,
       name: 'OpenAuth',
-      desc: '',
       frameworks: [
         SiFlutter,
         SiDart,
@@ -60,7 +57,6 @@ const WorksSection = () => {
       git: 'https://github.com/icabetong/movieous',
       preview: movieous,
       name: 'Movieous',
-      desc: '',
       frameworks: [
         SiJavascript,
         SiReact,

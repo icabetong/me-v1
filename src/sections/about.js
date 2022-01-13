@@ -83,8 +83,8 @@ const AboutSection = () => {
                     borderRadius="md"
                     p={4}
                     _hover={{
-                      borderColor: 'blue.300',
-                      color: 'blue.300',
+                      borderColor: 'blue.500',
+                      color: 'blue.500',
                       transition: 'all 500ms ease'
                     }}>
                     <Box display="inline-block">
