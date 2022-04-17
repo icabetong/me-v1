@@ -103,12 +103,8 @@ const Navigation = () => {
         <MenuItems to="about">{t("navigation.about")}</MenuItems>
         <MenuItems to="works">{t("navigation.works")}</MenuItems>
         <MenuItems to="contact">{t("navigation.contact")}</MenuItems>
-        <MenuItems>
-          <Button 
-            variant="link"
-            onClick={() => toggleColorMode()}>
-            {colorMode === "dark" ? <SunIcon/> : <MoonIcon/>}
-          </Button>
+        <MenuItems as={Button} variant="link" size="xs" onClick={() => toggleColorMode()}>
+          {colorMode === "dark" ? <SunIcon/> : <MoonIcon/>}
         </MenuItems>
       </Flex>
     </>
